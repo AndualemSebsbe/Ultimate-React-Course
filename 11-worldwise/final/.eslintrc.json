@@ -1,3 +1,8 @@
+// {
+//   "extends": "react-app"
+// }
+
 {
-  "extends": "react-app"
+  "extends": ["react-app", "react-app/jest"],
+  "plugins": ["import", "jsx-a11y", "react", "react-hooks"]
 }
