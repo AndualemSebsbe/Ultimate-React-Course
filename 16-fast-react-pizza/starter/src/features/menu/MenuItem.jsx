@@ -8,7 +8,7 @@ import UpdateItemQuantity from "../cart/UpdateItemQuantity";
 function MenuItem({ pizza }) {
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
   const dispatch = useDispatch();
-  const currentQuantity = useSelector(getCurrentQuantityById);
+  const currentQuantity = useSelector(getCurrentQuantityById(id));
 
   const isInCart = currentQuantity > 0;
 
@@ -57,12 +57,11 @@ function MenuItem({ pizza }) {
             </div>
           )}
 
-          {!soldOut &&
-            !isInCart(
-              <Button type="small" onClick={handleAddToCart}>
-                Add to cart
-              </Button>
-            )}
+          {!soldOut && !isInCart && (
+            <Button type="small" onClick={handleAddToCart}>
+              Add to cart
+            </Button>
+          )}
         </div>
       </div>
     </li>
