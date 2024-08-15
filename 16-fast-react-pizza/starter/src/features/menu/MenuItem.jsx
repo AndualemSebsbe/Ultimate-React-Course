@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { formatCurrency } from "../../utils/helpers";
 import Button from "../../ui/Button";
 import { useDispatch, useSelector } from "react-redux";
@@ -66,6 +68,17 @@ function MenuItem({ pizza }) {
       </div>
     </li>
   );
+}
+
+MenuItem.propTypes = {
+  pizza: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    unitPrice: PropTypes.number.isRequired,
+    ingredients: PropTypes.array,
+    soldOut: PropTypes.bool.isRequired,
+    imageUrl: PropTypes.string.isRequired
+  }).isRequired,
 }
 
 export default MenuItem;

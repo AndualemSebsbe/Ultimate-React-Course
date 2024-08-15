@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { Link } from "react-router-dom";
 
 function Button({ children, disabled, to, type, onClick }) {
@@ -32,4 +34,13 @@ function Button({ children, disabled, to, type, onClick }) {
     </button>
   );
 }
+
+Button.propTypes = {
+  children: PropTypes.object,
+  disabled: PropTypes.bool,
+  to: PropTypes.string,
+  type: PropTypes.string,
+  onClick: PropTypes.func,
+}
+
 export default Button;

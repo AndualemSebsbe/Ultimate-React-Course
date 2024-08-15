@@ -1,7 +1,10 @@
+import PropTypes from 'prop-types'
+
 import { formatCurrency } from "../../utils/helpers";
 // import { getCurrentQuantityById } from "./cartSlice";
 import DeleteItem from "./DeleteItem";
 import UpdateItemQuantity from "./UpdateItemQuantity";
+
 
 function CartItem({ item }) {
   const { pizzaId, name, quantity, totalPrice } = item;
@@ -27,4 +30,13 @@ function CartItem({ item }) {
   );
 }
 
+// Define PropTypes for the CartItem component
+CartItem.propTypes = {
+  item: PropTypes.shape({
+    pizzaId: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    quantity: PropTypes.number.isRequired,
+    totalPrice: PropTypes.number.isRequired,
+  }).isRequired,
+};
 export default CartItem;

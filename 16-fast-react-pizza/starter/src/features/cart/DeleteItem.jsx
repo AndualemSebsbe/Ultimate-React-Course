@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { useDispatch } from "react-redux";
 import Button from "../../ui/Button";
 import { deleteItem } from "./cartSlice";
@@ -11,4 +13,9 @@ function DeleteItem({ pizzaId }) {
     </Button>
   );
 }
+
+DeleteItem.propTypes = {
+  pizzaId: PropTypes.number.isRequired,
+}
+
 export default DeleteItem;
