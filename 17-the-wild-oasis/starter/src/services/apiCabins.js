@@ -16,7 +16,7 @@ export async function createCabin(newCabin) {
 
   if (error) {
     console.error(error);
-    throw new Error("Cabins couldn't be created");
+    throw new Error("Cabin couldn't be created");
   }
 
   return data;
